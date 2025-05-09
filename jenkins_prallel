@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('STEP1') {
+            steps {
+                echo "hello"
+            }
+        }
+
+        stage('prallel Testing') {
+            prallel {
+                stage('TEST1') {
+                    steps {
+                        echo "hi"
+                    }
+                }
+
+                stage('TEST2') {
+                    steps {
+                        echo "shankar"
+                    }
+                }
+            }
+
+        }
+    }
+}
