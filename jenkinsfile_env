@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    environment {
+        GIT_BRANCH = 'main'
+        GIT_CREDENTIALS = 'shankarshankar90'
+        GIT_URL = 'https://github.com/shankarshankar90/pipeline_file.git'
+    }
+
+    stages {
+        stage {
+            steps{
+                script {
+                    git branch: "${GIT_BRANCH}",
+                       credentials: "${GIT_CREDENTIALS}",
+                           url: "${GIT_URL}"
+                }
+            }
+        }
+        stage('CHECK') {
+            steps{
+                sh '''
+                     ls -lrt
+                     echo $GIT_BRANCH
+                     env
+                   '''
+            }
+                     
+        }    
+    }
+}
