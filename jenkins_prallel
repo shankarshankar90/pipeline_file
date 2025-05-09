@@ -8,8 +8,8 @@ pipeline {
             }
         }
 
-        stage('prallel Testing') {
-            prallel {
+        stage('parallel Testing') {
+            parallel {
                 stage('TEST1') {
                     steps {
                         echo "hi"
