@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+
+    options {
+        buildDiscarder(logRotator(numTokeepStr: '1'))
+    }
+
+
+    stages {
+        stage('STEP1') {
+	     steps {
+	        echo "hello"
+	     }
+	} 
+    }
+}
