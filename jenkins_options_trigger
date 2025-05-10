@@ -3,7 +3,7 @@ pipeline {
 
 
     options {
-        buildDiscarder(logRotator(numTokeepStr: '1'))
+        buildDiscarder(logRotator(numToKeepStr: '1'))
     }
 
 
